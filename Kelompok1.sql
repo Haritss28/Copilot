@@ -310,7 +310,6 @@ CREATE TABLE absensi_mahasiswa (
 CREATE TABLE nilai (
   id_nilai INT NOT NULL AUTO_INCREMENT,
   id_kelas INT NOT NULL,
-  id_mahasiswa INT NOT NULL,
   nilai_tugas DECIMAL(5,2) NULL,
   nilai_uts DECIMAL(5,2) NULL,
   nilai_uas DECIMAL(5,2) NULL,
@@ -321,13 +320,8 @@ CREATE TABLE nilai (
   INDEX fk_nilai_kelas_idx (id_kelas ASC),
   INDEX fk_nilai_mahasiswa_idx (id_mahasiswa ASC),
   CONSTRAINT fk_nilai_kelas
-    FOREIGN KEY (id_kelas)
-    REFERENCES kelas (id_kelas)
+    FOREIGN KEY (id_krs_detail)
+    REFERENCES krs_detail (id_krs_detail)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT fk_nilai_mahasiswa
-    FOREIGN KEY (id_mahasiswa)
-    REFERENCES mahasiswa (id_mahasiswa)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
