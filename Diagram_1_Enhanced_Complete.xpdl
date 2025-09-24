@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://www.wfmc.org/2008/XPDL2.1">
+    <Process Id="EnhancedProcess" Name="Enhanced Process">
+        <Activities>
+            <Activity Id="TableSelection" Name="Select Table">
+                <Description>Activity to select a table with error handling for full tables.</Description>
+                <Transitions>
+                    <Transition Source="TableSelection" Target="MenuService"/>
+                    <Transition Source="TableSelection" Target="FullTableError"/>
+                </Transitions>
+            </Activity>
+            <Activity Id="MenuService" Name="Menu Service">
+                <Description>Menu service activity.</Description>
+            </Activity>
+            <Activity Id="FullTableError" Name="Full Table Error">
+                <Description>Error handling for full tables.</Description>
+            </Activity>
+        </Activities>
+    </Process>
+</Package>
